@@ -16,9 +16,9 @@ type PricingCardProps = {
 function PricingCard({
   titleBadge,
   priceLabel,
-  priceSuffix = "/мес",
+  priceSuffix = "",
   features,
-  cta = "Подписаться",
+  cta = "Узнать подробнее",
   className,
 }: PricingCardProps) {
   return (
@@ -49,7 +49,7 @@ function PricingCard({
         <span className="font-mono text-3xl font-semibold tracking-tight text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)]">
           {priceLabel}
         </span>
-        {priceLabel.toLowerCase() !== "бесплатно" && priceLabel !== "0 ₽" && (
+        {priceSuffix && (
           <span className="text-gray-300 text-xs font-open-sans-custom">{priceSuffix}</span>
         )}
       </div>
@@ -69,6 +69,7 @@ function PricingCard({
 export function BentoPricing() {
   return (
     <div className="grid grid-cols-1 gap-1.5 md:grid-cols-2 lg:grid-cols-8">
+      {/* Слайд 3: WMS vs Excel */}
       <div
         className={cn(
           "bg-white/5 border-white/10 relative w-full overflow-hidden rounded-md border-2",
@@ -91,33 +92,36 @@ export function BentoPricing() {
         </div>
         <div className="flex items-center gap-3 p-3">
           <Badge variant="secondary" className="bg-white/10 text-white border-white/20 font-open-sans-custom text-xs">
-            ПРЕМИУМ
+            WMS vs Excel
           </Badge>
           <Badge
             variant="outline"
             className="hidden lg:flex bg-white/5 text-white border-white/20 font-open-sans-custom text-xs"
           >
-            <SparklesIcon className="me-1 size-3" /> Популярный
+            <SparklesIcon className="me-1 size-3" /> Слайд 3
           </Badge>
           <div className="ml-auto">
             <Button size="sm" className="bg-white text-black hover:bg-gray-100 font-open-sans-custom text-xs">
-              Подписаться
+              Запросить демо
             </Button>
           </div>
         </div>
         <div className="flex flex-col p-3 lg:flex-row">
-          <div className="pb-2 lg:w-[30%]">
-            <span className="font-mono text-3xl font-semibold tracking-tight text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)]">
-              2 000 ₽
-            </span>
-            <span className="text-gray-300 text-xs font-open-sans-custom">/мес</span>
+          <div className="pb-2 lg:w-[40%]">
+            <p className="font-open-sans-custom text-sm font-semibold text-white leading-snug [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)]">
+              WMS — это система управления процессами, а не учёта данных
+            </p>
+            <p className="text-gray-400 text-xs font-open-sans-custom mt-2">
+              Excel, «самописные» таблицы и простая 1С фиксируют факт. WMS управляет каждым шагом в реальном времени.
+            </p>
           </div>
-          <ul className="text-gray-300 grid gap-2 text-xs lg:w-[70%] font-open-sans-custom">
+          <ul className="text-gray-300 grid gap-2 text-xs lg:w-[60%] font-open-sans-custom">
             {[
-              "2 000 ₽ кредитов включено ежемесячно",
-              "Докупайте кредиты сверх месячного лимита",
-              "5x увеличенный лимит вложений",
-              "Импорт дизайнов из популярных инструментов",
+              "Адресное хранение и контроль каждой ячейки",
+              "Управление задачами персонала через ТСД",
+              "Волновой сбор и оптимизация маршрутов",
+              "Автоматический расчёт сдельной оплаты труда",
+              "Интеграция с Честным Знаком и маркетплейсами",
             ].map((f, i) => (
               <li key={i} className="flex items-center gap-2">
                 <Check className="w-[1.05rem] h-[1.05rem] text-white flex-shrink-0" strokeWidth={3} />
@@ -128,50 +132,49 @@ export function BentoPricing() {
         </div>
       </div>
 
+      {/* Слайд 4: Эффект */}
       <PricingCard
-        titleBadge="СТАРТ"
-        priceLabel="0 ₽"
+        titleBadge="ЭФФЕКТ"
+        priceLabel="99,9%"
+        priceSuffix="точность"
         features={[
-          "500 ₽ кредитов включено ежемесячно",
-          "Деплой приложений в облако",
-          "Визуальное редактирование",
-          "Синхронизация с Git",
+          "Снижение ошибок комплектации до 99,9%",
+          "Ускорение сборки заказов в 2–3 раза",
+          "Прозрачность для налоговой и маркетплейсов",
+          "Цикличная инвентаризация без остановки склада",
         ]}
         className="lg:col-span-3"
-        cta="Начать"
+        cta="Подробнее"
       />
 
+      {/* Слайд 6: Рынок WMS */}
       <PricingCard
-        titleBadge="КОМАНДА"
-        priceLabel="3 000 ₽"
-        priceSuffix="/чел/мес"
+        titleBadge="РЫНОК РФ 2025"
+        priceLabel="21 день"
+        priceSuffix="внедрение"
         features={[
-          "3 000 ₽ кредитов на участника ежемесячно",
-          "Единый биллинг и управление командой",
-          "Общие чаты и совместная работа",
+          "Рынок складских площадей РФ превысил 50 млн м² в 2025 году",
+          "Повышенный спрос на WMS сохраняется на фоне роста e-commerce",
+          "МАЙА — готовый SaaS, не лицензия с доработками",
+          "Предсказуемые затраты на внедрение и поддержку",
+          "Всегда актуальная версия без затрат на обновление",
         ]}
         className="lg:col-span-4"
+        cta="Узнать больше"
       />
 
+      {/* Слайд 7: Итог */}
       <PricingCard
-        titleBadge="БИЗНЕС"
-        priceLabel="10 000 ₽"
-        priceSuffix="/чел/мес"
-        features={["3 000 ₽ кредитов на участника ежемесячно", "Отключение обучения по умолчанию", "Полный доступ к API"]}
-        className="lg:col-span-4"
-      />
-
-      <PricingCard
-        titleBadge="КОРПОРАЦИЯ"
-        priceLabel="По запросу"
+        titleBadge="ИТОГ"
+        priceLabel="Ваш выбор"
         priceSuffix=""
         features={[
-          "Отключение обучения по умолчанию",
-          "SAML SSO",
-          "Приоритетный доступ",
-          "Персональная поддержка",
+          "❌ Без WMS: расхождения, ошибки, зависимость от людей — «чёрная дыра» для денег",
+          "✅ С МАЙА WMS: прозрачный, управляемый, высокоэффективный складской актив",
+          "Быстрая реализация специфичных функций под ваши процессы",
+          "Персональное сопровождение на каждом этапе",
         ]}
-        className="lg:col-span-8"
+        className="lg:col-span-4"
         cta="Связаться"
       />
     </div>

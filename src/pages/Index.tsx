@@ -159,18 +159,18 @@ export default function Index() {
           <div className="mx-auto max-w-4xl">
             <div className="text-center px-0 leading-5">
               <h1 className="mb-8 text-balance text-5xl tracking-tight text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)] md:text-6xl lg:text-8xl">
-                <span className="font-open-sans-custom not-italic">Идея.</span>{" "}
-                <span className="font-serif italic">Промпт.</span>{" "}
-                <span className="font-open-sans-custom not-italic">Результат.</span>
+                <span className="font-open-sans-custom not-italic">Склад.</span>{" "}
+                <span className="font-serif italic">Под контролем.</span>{" "}
+                <span className="font-open-sans-custom not-italic">С первого дня.</span>
               </h1>
 
               <p className="mb-8 mx-auto max-w-2xl text-pretty leading-relaxed text-gray-300 [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)] font-thin font-open-sans-custom tracking-wide leading-7 text-xl">
-                дизайнер, разработчик или просто любопытный — возьми идею,{" "}
-                <span className="font-serif italic">опиши</span> её и наблюдай, как она оживает
+                МАЙА — профессиональная WMS-система для управления складом.{" "}
+                <span className="font-serif italic">Внедрение за 21 день</span>, предсказуемые затраты, всегда актуальная версия.
               </p>
 
               <div className="flex justify-center">
-                <ShinyButton className="px-8 py-3 text-base">начать</ShinyButton>
+                <ShinyButton className="px-8 py-3 text-base">Запросить демо</ShinyButton>
               </div>
             </div>
           </div>
@@ -201,11 +201,10 @@ export default function Index() {
           <div className="relative z-10 mx-auto w-full max-w-5xl">
             <div className="mx-auto mb-10 max-w-2xl text-center">
               <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)] font-open-sans-custom">
-                Тарифы и цены
+                Что такое WMS и эффект от внедрения
               </h1>
               <p className="text-gray-300 mt-4 text-sm md:text-base font-open-sans-custom [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)]">
-                Выберите подходящий план. От индивидуальных авторов до корпоративных команд — гибкие
-                тарифы для вашего успеха.
+                Слайды 3–4: чем WMS отличается от Excel и 1С, и какой измеримый результат даёт МАЙА
               </p>
             </div>
             <BentoPricing />
@@ -231,10 +230,10 @@ export default function Index() {
           <div className="relative z-10 mx-auto w-full max-w-7xl">
             <div className="mx-auto mb-10 max-w-2xl text-center">
               <h1 className="text-4xl font-extrabold tracking-tight lg:text-6xl text-white [text-shadow:_0_4px_20px_rgb(0_0_0_/_60%)] font-open-sans-custom">
-                О нас
+                Реалии рынка WMS в России
               </h1>
               <p className="text-gray-300 mt-4 text-sm md:text-base font-open-sans-custom [text-shadow:_0_2px_10px_rgb(0_0_0_/_50%)]">
-                Узнайте больше о нашей миссии, видении и ценностях, которые движут нами.
+                Слайд 6: рост складского рынка и почему МАЙА выигрывает у традиционных WMS-решений
               </p>
             </div>
             <AboutQuote />
@@ -258,13 +257,13 @@ export default function Index() {
 
           <div className="relative z-10 mx-auto w-full max-w-5xl mt-[5vh]">
             <ContactCard
-              title="Свяжитесь с нами"
-              description="Если у вас есть вопросы о наших услугах или нужна помощь, заполните форму. Мы стараемся отвечать в течение 1 рабочего дня."
+              title="Запросить демо МАЙА"
+              description="Оставьте заявку — мы проведём персональную демонстрацию системы, ответим на вопросы и рассчитаем стоимость внедрения под ваш склад."
               contactInfo={[
                 {
                   icon: MailIcon,
                   label: "Почта",
-                  value: "hello@promptcraft.dev",
+                  value: "info@maya-wms.ru",
                 },
                 {
                   icon: PhoneIcon,
@@ -317,7 +316,7 @@ export default function Index() {
                   className="w-full bg-white text-black hover:bg-gray-100 [text-shadow:_0_1px_2px_rgb(0_0_0_/_10%)] font-open-sans-custom"
                   type="button"
                 >
-                  Отправить
+                  Запросить демо
                 </Button>
               </form>
             </ContactCard>
